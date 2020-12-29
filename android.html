@@ -49,18 +49,27 @@
         border: none;
         background: white;
         color: black;
-        width: 4em;
-        height: 2em;
+        width: 10em;
+        height: 3em;
+      }
+
+      .arjs-loader {
+        display: flex;
+        justify-content: center;
+      }
+
+      .arjs-loader > p {
+        font-size: 2rem;
       }
     </style>
   </head>
 
   <body style="margin: 0; overflow: hidden">
     <div class="arjs-loader">
-      <div>Carregando, por favor espere...</div>
+      <p>Carregando, por favor espere...</p>
     </div>
     <div class="buttons">
-      <button class="say-hi-button">SAY HI!</button>
+      <button class="say-hi-button">ACESSE</button>
     </div>
     <a-scene
       vr-mode-ui="enabled: false"
