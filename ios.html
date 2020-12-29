@@ -3,15 +3,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experiência RA - Tu Viu?</title>
-</head>
-<body style="margin: 0; overflow: hidden;">
-  <div
-    style="width: 100vw;
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video {
+      width: 100vw;
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;">
+      justify-content: center;
+    }
+
+    #vid {
+      width: 100%;
+      height: auto;
+    }
+
+    .button {
+      margin: 15px 0 70px 0;
+      width:100%;
+      text-align: center;
+      border: 0;
+      padding: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <div
+  class="video"
+    >
     <video
     id="vid"
     src="assets/asset.mp4"
@@ -23,10 +47,9 @@
     autoplay
     controls
     playsinline
-    style="width: 100%; height: auto;"
   ></video>
 
-  <button style="margin: 30px; width:100%; text-align: center;">Acesse</button>
+  <button class="button">Acesse</button>
   </div>
 </body>
 </html>
