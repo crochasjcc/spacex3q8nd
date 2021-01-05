@@ -31,6 +31,12 @@
       });
     </script>
     <style>
+      body {
+
+      margin: 0;
+      overflow: hidden;
+      }
+
       .buttons {
         position: absolute;
         bottom: 0;
@@ -47,20 +53,25 @@
         padding: 0.25em;
         border-radius: 4px;
         border: 0;
-        background: white;
-        color: black;
+        background: #d9000d;
+        color: white;
         width: 10em;
         height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-family: sans-serif;
       }
     </style>
   </head>
 
-  <body style="margin: 0; overflow: hidden">
+  <body>
     <div class="arjs-loader">
       <div>Carregando, por favor espere...</div>
     </div>
     <div class="buttons">
-      <button class="say-hi-button">ACESSE</button>
+      <a href="https://www.jcclube.com.br/" class="say-hi-button">ACESSE</a>
     </div>
     <a-scene
       vr-mode-ui="enabled: false"
@@ -101,7 +112,7 @@
         <a-video
           src="#vid"
           scale="1 1 1"
-          position="0 0.1 0"
+          position="0 0 0"
           rotation="-90 0 0"
           class="clickable"
           gesture-handler
