@@ -30,19 +30,6 @@
           );
         },
       });
-
-      AFRAME.registerComponent("loadingHandler", {
-        init: function() {
-          const camera = this.el
-          this.button = document.querySelector('.buttons')
-          this.loading = document.querySelector('.arjs-loader')
-
-          camera.addEventListener('camera-init', function () {
-            button.style.display = 'block'
-            loading.style.display = 'none'
-          }.bind(this))
-        }
-      })
     </script>
     <style>
       body {
@@ -100,10 +87,10 @@
   </head>
 
   <body>
-    <div loadingHandler class="arjs-loader">
+    <div class="arjs-loader">
       <div>Carregando, por favor espere...</div>
     </div>
-    <div loadingHandler class="buttons">
+    <div class="buttons">
       <a href="https://www.jcclube.com.br/" class="say-hi-button">ACESSE</a>
     </div>
     <a-scene
