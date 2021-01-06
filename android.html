@@ -12,6 +12,7 @@
           var marker = this.el;
           this.vid = document.querySelector("#vid");
 
+
           marker.addEventListener(
             "markerFound",
             function () {
@@ -29,15 +30,28 @@
           );
         },
       });
+
+      AFRAME.registerComponent("loadingHandler", {
+        init: function() {
+          const camera = this.el
+          this.button = document.querySelector('.buttons')
+          this.loading = document.querySelector('.arjs-loader')
+
+          camera.addEventListener('camera-init', function () {
+            button.style.display = 'block'
+            // loading.style.display = 'none'
+          }.bind(this))
+        }
+      })
     </script>
     <style>
       body {
-
-      margin: 0;
-      overflow: hidden;
+        margin: 0;
+        overflow: hidden;
       }
 
       .buttons {
+        display: none;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -63,14 +77,33 @@
         text-decoration: none;
         font-family: sans-serif;
       }
+
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+      }
     </style>
   </head>
 
   <body>
-    <div class="arjs-loader">
+    <div loadingHandler class="arjs-loader">
       <div>Carregando, por favor espere...</div>
     </div>
-    <div class="buttons">
+    <div loadingHandler class="buttons">
       <a href="https://www.jcclube.com.br/" class="say-hi-button">ACESSE</a>
     </div>
     <a-scene
